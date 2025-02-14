@@ -1,0 +1,53 @@
+.form-group-float {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-control-float {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 50;  /* Default height */
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;  /* Smooth transition */
+    -webkit-appearance: none;  /* For WebKit browsers */
+    -moz-appearance: none;     /* For Firefox */
+    appearance: none; 
+}
+
+/* Floating label styles */
+.floating-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
+    transition: 0.2s ease all;
+    pointer-events: none;
+}
+
+/* When input is focused or filled, move the label */
+.form-control-float:focus ~ .floating-label,
+.form-control-float:not(:placeholder-shown) ~ .floating-label {
+    top: 12px;
+    left: 10px;
+    font-size: 12px;
+    color:rgb(97, 97, 97);  /* Change label color on focus */
+}
+.form-control-float:focus {
+    height: 50px; /* Enlarge the input */
+    padding-top: 22px; /* Optional: Increase padding for more spacious look */
+}
+
+.form-control-float:not(:focus):not(:placeholder-shown) {
+    height: 50px;  /* Keep the enlarged height when there's content */
+    padding-top: 22px;
+}
+
+/* Ensure the placeholder does not show */
+input::placeholder {
+    color: transparent;  /* Hide placeholder text */
+}
